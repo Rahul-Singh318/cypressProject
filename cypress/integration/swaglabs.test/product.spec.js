@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import ProductsPage from '../element.pom/products.pom.js'
+import ProductsPage from '../../../element.pom/products.page.js'
 const product = new ProductsPage()
 
 describe('SWAGLABS',()=>{
@@ -59,8 +59,7 @@ describe('SWAGLABS',()=>{
         var pPrice;
         product.itemPrice().then(($price)=>{
           productPrice = $price.eq('1').text()
-            pPrice = productPrice.replace("$29.99","29.99");
-            cy.log(pPrice)
+          pPrice = productPrice.replace("$29.99","29.99");
         })
 
 
@@ -72,7 +71,6 @@ describe('SWAGLABS',()=>{
             { 
             if(itemName.includes(el))
             {
-                cy.log(el)
                 product.addToCart().eq(index).click()
             }
 
@@ -83,7 +81,6 @@ describe('SWAGLABS',()=>{
         product.addedProducts().then(($num)=>{
 
             const addedProduct = $num.text()
-            cy.log(addedProduct)
 
             var i;
             for(i=0; i<=6; i++)
@@ -109,7 +106,6 @@ describe('SWAGLABS',()=>{
         product.cartItems().each(($cartlist,index,$list) =>{
 
             const cartItems = $cartlist.text()
-            cy.log(cartItems)
 
             if(cartItems.includes('Sauce Labs Backpack'))
             {

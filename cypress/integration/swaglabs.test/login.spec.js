@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
- import LoginPage from '../element.pom/login.pom.js'
+ import LoginPage from '../../../element.pom/login.page.js'
  const lp = new LoginPage()
 
  describe('Login Into SWAGLABS',()=>{
@@ -26,7 +26,6 @@
         cy.get('h3').then(($error)=> {
 
             const errorText = $error.text()
-            cy.log(errorText)
             expect(errorText).to.be.equal('Epic sadface: Username and password do not match any user in this service')
     
 
@@ -44,7 +43,6 @@
         cy.get('h3').then(($error)=> {
 
             const errorText = $error.text()
-            cy.log(errorText)
             expect(errorText).to.be.equal('Epic sadface: Username and password do not match any user in this service')
 
 
@@ -61,7 +59,6 @@
         cy.get('h3').then(($error)=> {
 
             const errorText = $error.text()
-            cy.log(errorText)
             expect(errorText).to.be.equal('Epic sadface: Username is required')
 
 
@@ -78,7 +75,6 @@
         cy.get('h3').then(($error)=> {
 
             const errorText = $error.text()
-            cy.log(errorText)
             expect(errorText).to.be.equal('Epic sadface: Password is required')
 
 
@@ -95,7 +91,6 @@
         cy.get('h3').then(($error)=> {
 
             const errorText = $error.text()
-            cy.log(errorText)
             expect(errorText).to.be.equal('Epic sadface: Username is required')
 
 

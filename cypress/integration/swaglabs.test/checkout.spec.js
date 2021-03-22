@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import CheckoutPage from '../element.pom/checkout.pom.js'
+import CheckoutPage from '../../../element.pom/checkout.page.js'
 const checkout = new CheckoutPage()
 
 describe('SWAGLABS',()=>{
@@ -27,7 +27,6 @@ describe('SWAGLABS',()=>{
             { 
             if(itemName.includes(el))
             {
-                cy.log(el)
                 checkout.addToCart().eq(index).click()
             }
 
@@ -45,7 +44,6 @@ describe('SWAGLABS',()=>{
         cy.get('h3').then(($error)=> {
 
             const errorText = $error.text()
-            cy.log(errorText)
             expect(errorText).to.be.equal('Error: First Name is required')
         })
 
@@ -57,7 +55,6 @@ describe('SWAGLABS',()=>{
         cy.get('h3').then(($error1)=> {
 
             const errorText1 = $error1.text()
-            cy.log(errorText1)
             expect(errorText1).to.be.equal('Error: Last Name is required')
         })
 
@@ -69,7 +66,6 @@ describe('SWAGLABS',()=>{
         cy.get('h3').then(($error1)=> {
 
             const errorText1 = $error1.text()
-            cy.log(errorText1)
             expect(errorText1).to.be.equal('Error: Postal Code is required')
         })
 

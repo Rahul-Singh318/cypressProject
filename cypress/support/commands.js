@@ -26,8 +26,8 @@
 
 
 /// <reference types="Cypress" />
-import LoginPage from '../integration/element.pom/login.pom'
-import CheckoutPage from '../integration/element.pom/checkout.pom'
+import LoginPage from '../../element.pom/login.page'
+import CheckoutPage from '../../element.pom/checkout.page'
 
 Cypress.Commands.add("login", (email, password) => {
 
