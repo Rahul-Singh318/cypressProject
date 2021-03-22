@@ -25,7 +25,7 @@ describe('SWAGLABS',()=>{
 
         var allproducts=[];
         var sortedProducts= this.data.productsZA
-        cy.get('.inventory_item_name').each(($e1, index, $list)=>{
+        product.itemNames().each(($e1, index, $list)=>{
 
         for(let i=index;i<=index;i++)
         {
@@ -42,7 +42,7 @@ describe('SWAGLABS',()=>{
 
         var allprices=[];
         var sortedprices= this.data.priceLH
-        cy.get('.inventory_item_price').each(($e1, index, $list)=>{
+        product.itemPrice().each(($e1, index, $list)=>{
 
         for(let i=index;i<=index;i++)
         {
@@ -57,11 +57,12 @@ describe('SWAGLABS',()=>{
         // Backpack price
         var productPrice;
         var pPrice;
-        cy.get('.inventory_item_price').then(($price)=>{
+        product.itemPrice().then(($price)=>{
           productPrice = $price.eq('1').text()
             pPrice = productPrice.replace("$29.99","29.99");
             cy.log(pPrice)
         })
+
 
         // Select products and add into the cart
         product.itemNames().should('have.length',6).and('be.visible').each(($items,index,$list)=>{
@@ -99,7 +100,7 @@ describe('SWAGLABS',()=>{
 
         // Verify product price
         var cartPrice;
-        cy.get('.inventory_item_price').then(($cprice)=>{
+        product.itemPrice().then(($cprice)=>{
             cartPrice = $cprice.eq('0').text()
             expect(cartPrice).to.be.equal(pPrice)
         })
