@@ -1,0 +1,10 @@
+{
+  "url":"https://www.saucedemo.com/",
+  "username": "standard_user",
+  "wrongUsername":"standard123_user",
+  "password": "secret_sauce",
+  "wrongPassword":"secretsauce",
+  "productName":["Sauce Labs Backpack","Sauce Labs Bike Light","Sauce Labs Onesie"],
+  "productsZA":["Test.allTheThings() T-Shirt (Red)", "Sauce Labs Onesie", "Sauce Labs Fleece Jacket", "Sauce Labs Bolt T-Shirt", "Sauce Labs Bike Light", "Sauce Labs Backpack"],
+  "priceLH":["$7.99","$9.99","$15.99","$15.99","$29.99","$49.99"]
+}

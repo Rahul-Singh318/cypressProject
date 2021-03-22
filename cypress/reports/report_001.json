@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-20T21:13:39.703Z",
+    "end": "2021-03-20T21:14:00.201Z",
+    "duration": 20498,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9b4b4739-7554-42f4-9f79-03bec068d1bd",
+      "title": "",
+      "fullFile": "cypress\\integration\\swaglabs.test\\login.test.js",
+      "file": "cypress\\integration\\swaglabs.test\\login.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+          "title": "Login Into SWAGLABS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login With Invalid Username And Valid Password",
+              "fullTitle": "Login Into SWAGLABS Login With Invalid Username And Valid Password",
+              "timedOut": null,
+              "duration": 4713,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "lp.username(this.data.wrongUsername);\nlp.password(this.data.password);\nlp.submit();\ncy.get('h3').then(function ($error) {\n  var errorText = $error.text();\n  cy.log(errorText);\n  expect(errorText).to.be.equal('Epic sadface: Username and password do not match any user in this service');\n});",
+              "err": {},
+              "uuid": "64756739-0288-4824-9b77-422f79301893",
+              "parentUUID": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login With valid Username And Invalid Password",
+              "fullTitle": "Login Into SWAGLABS Login With valid Username And Invalid Password",
+              "timedOut": null,
+              "duration": 2525,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "lp.username(this.data.username);\nlp.password(this.data.wrongPassword);\nlp.submit();\ncy.get('h3').then(function ($error) {\n  var errorText = $error.text();\n  cy.log(errorText);\n  expect(errorText).to.be.equal('Epic sadface: Username and password do not match any user in this service');\n});",
+              "err": {},
+              "uuid": "b475eec4-30a6-4bb5-92fe-d5b6a98cd8e0",
+              "parentUUID": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login With blank Username And valid Password",
+              "fullTitle": "Login Into SWAGLABS Login With blank Username And valid Password",
+              "timedOut": null,
+              "duration": 1696,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "lp.blankUsername();\nlp.password(this.data.password);\nlp.submit();\ncy.get('h3').then(function ($error) {\n  var errorText = $error.text();\n  cy.log(errorText);\n  expect(errorText).to.be.equal('Epic sadface: Username is required');\n});",
+              "err": {},
+              "uuid": "8198d32e-0842-4f57-8dd2-74fc4375e0c4",
+              "parentUUID": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login With valid Username And blank Password",
+              "fullTitle": "Login Into SWAGLABS Login With valid Username And blank Password",
+              "timedOut": null,
+              "duration": 1769,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "lp.username(this.data.username);\nlp.blankPassword();\nlp.submit();\ncy.get('h3').then(function ($error) {\n  var errorText = $error.text();\n  cy.log(errorText);\n  expect(errorText).to.be.equal('Epic sadface: Password is required');\n});",
+              "err": {},
+              "uuid": "af95d6dd-8a1c-4bd6-8b8c-3324c4c4fe76",
+              "parentUUID": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login With blank Username And blank Password",
+              "fullTitle": "Login Into SWAGLABS Login With blank Username And blank Password",
+              "timedOut": null,
+              "duration": 1536,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "lp.blankUsername();\nlp.blankPassword();\nlp.submit();\ncy.get('h3').then(function ($error) {\n  var errorText = $error.text();\n  cy.log(errorText);\n  expect(errorText).to.be.equal('Epic sadface: Username is required');\n});",
+              "err": {},
+              "uuid": "c68160e1-3e3c-448d-af66-e3ddc2be9e0d",
+              "parentUUID": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login With Valid Username And Password",
+              "fullTitle": "Login Into SWAGLABS Login With Valid Username And Password",
+              "timedOut": null,
+              "duration": 2832,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(this.data.username, this.data.password);",
+              "err": {},
+              "uuid": "cb518852-dcaf-49e3-a322-e9eaecf6634c",
+              "parentUUID": "7afb71f7-7b6f-4a3f-ae9a-77036615f86e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "64756739-0288-4824-9b77-422f79301893",
+            "b475eec4-30a6-4bb5-92fe-d5b6a98cd8e0",
+            "8198d32e-0842-4f57-8dd2-74fc4375e0c4",
+            "af95d6dd-8a1c-4bd6-8b8c-3324c4c4fe76",
+            "c68160e1-3e3c-448d-af66-e3ddc2be9e0d",
+            "cb518852-dcaf-49e3-a322-e9eaecf6634c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15071,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
