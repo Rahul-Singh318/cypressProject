@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
- import LoginPage from '../../../element.pom/login.page.js'
+ import LoginPage from '../../element.pom/login.page.js'
  const lp = new LoginPage()
 
  describe('Login Into SWAGLABS',()=>{

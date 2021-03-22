@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import ProductsPage from '../../../element.pom/products.page.js'
+import ProductsPage from '../../element.pom/products.page.js'
 const product = new ProductsPage()
 
 describe('SWAGLABS',()=>{

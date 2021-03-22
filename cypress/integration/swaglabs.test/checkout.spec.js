@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import CheckoutPage from '../../../element.pom/checkout.page.js'
+import CheckoutPage from '../../element.pom/checkout.page.js'
 const checkout = new CheckoutPage()
 
 describe('SWAGLABS',()=>{
