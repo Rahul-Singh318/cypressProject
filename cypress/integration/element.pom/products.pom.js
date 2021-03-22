@@ -1,4 +1,4 @@
-class productsPage
+class ProductsPage
 {
     allProduct(){
        return cy.get('.inventory_item')
@@ -59,4 +59,4 @@ class productsPage
 
     
 }
-export default productsPage
+export default ProductsPage

@@ -1,4 +1,4 @@
-class checkoutPage
+class CheckoutPage
 {
     itemNames()
     {
@@ -67,4 +67,4 @@ class checkoutPage
         return cy.get('div.cart_list > div:nth-child(n) > div.cart_item_label > div.inventory_item_price')
     }
 }
-export default checkoutPage
+export default CheckoutPage

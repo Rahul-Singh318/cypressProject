@@ -26,12 +26,12 @@
 
 
 /// <reference types="Cypress" />
-import loginPage from '../integration/element.pom/login.pom'
-import checkoutPage from '../integration/element.pom/checkout.pom'
+import LoginPage from '../integration/element.pom/login.pom'
+import CheckoutPage from '../integration/element.pom/checkout.pom'
 
 Cypress.Commands.add("login", (email, password) => {
 
-    const lp = new loginPage
+    const lp = new LoginPage
     cy.fixture('example').then(function(data)
     {
        this.data = data
@@ -47,7 +47,7 @@ Cypress.Commands.add("login", (email, password) => {
 })
 
 Cypress.Commands.add("checkout",(firstname,lastname,zip)=>{
-    const cp = new checkoutPage
+    const cp = new CheckoutPage
 
     cp.firstName(firstname)
     cp.lastName(lastname)

@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
-import productsPage from '../element.pom/products.pom.js'
-const product = new productsPage()
+import ProductsPage from '../element.pom/products.pom.js'
+const product = new ProductsPage()
 
 describe('SWAGLABS',()=>{
 
