@@ -12,6 +12,12 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin');
+
+module.exports = (on, config) => {
+  getCompareSnapshotsPlugin(on, config);
+};
+
 /**
  * @type {Cypress.PluginConfig}
  */

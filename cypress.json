@@ -9,5 +9,12 @@
     "charts": true
   },
   "video": false,
-  "projectId": "3q22gq"
+  "projectId": "3q22gq",
+  "pageLoadTimeout":100000,
+  "screenshotsFolder": "./cypress/snapshots/actual",
+  "trashAssetsBeforeRuns": true,
+  "env": {
+  "failSilently": false
+  }
+
 }

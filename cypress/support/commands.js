@@ -28,6 +28,7 @@
 /// <reference types="Cypress" />
 import LoginPage from '../element.pom/login.page'
 import CheckoutPage from '../element.pom/checkout.page'
+import LoginEcom from '../element.pom/EcomLogin.page'
 
 Cypress.Commands.add("login", (email, password) => {
 
@@ -53,3 +54,9 @@ Cypress.Commands.add("checkout",(firstname,lastname,zip)=>{
     cp.lastName(lastname)
     cp.zipCode(zip)
 })
+
+const compareSnapshotCommand = require('cypress-visual-regression/dist/command');
+
+compareSnapshotCommand({
+    capture: 'fullPage'
+  });

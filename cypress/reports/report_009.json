@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-24T11:34:26.831Z",
+    "end": "2021-03-24T11:35:17.786Z",
+    "duration": 50955,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "73613a28-5cb9-4dfd-adf5-79cb366e6736",
+      "title": "",
+      "fullFile": "cypress\\integration\\swaglabs.test\\checkout.spec.js",
+      "file": "cypress\\integration\\swaglabs.test\\checkout.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "87c674dc-a735-423a-9276-5dd0f3b92a30",
+          "title": "SWAGLABS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Checkout",
+              "fullTitle": "SWAGLABS Verify Checkout",
+              "timedOut": null,
+              "duration": 42133,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var _this = this;\n// Select products and add into the cart\ncheckout.itemNames().should('have.length', 6).and('be.visible').each(function ($items, index, $list) {\n  var itemName = $items.text();\n  _this.data.productName.forEach(function (el) {\n    if (itemName.includes(el)) {\n      checkout.addToCart().eq(index).click();\n    }\n  });\n});\ncheckout.cart().should('be.visible').click();\ncheckout.checkoutButton(); // Checkout without firstname\ncheckout.lastName('Singh');\ncheckout.zipCode('123');\ncheckout.countinue();\ncy.get('h3').then(function ($error) {\n  var errorText = $error.text();\n  expect(errorText).to.be.equal('Error: First Name is required');\n}); // Checkout without lastname\ncy.reload();\ncheckout.firstName('Rahul');\ncheckout.zipCode('123');\ncheckout.countinue();\ncy.get('h3').then(function ($error1) {\n  var errorText1 = $error1.text();\n  expect(errorText1).to.be.equal('Error: Last Name is required');\n}); // Checkout without zipcode\ncy.reload();\ncheckout.firstName('Rahul');\ncheckout.lastName('Singh');\ncheckout.countinue();\ncy.get('h3').then(function ($error1) {\n  var errorText1 = $error1.text();\n  expect(errorText1).to.be.equal('Error: Postal Code is required');\n}); // checkout with valid user details\ncy.checkout('Rahul', 'Singh', '123');\ncheckout.countinue();\ncheckout.finish();\ncheckout.successMessage().then(function ($success) {\n  var messsage = $success.text();\n  expect(messsage).to.be.equal('THANK YOU FOR YOUR ORDER');\n});",
+              "err": {},
+              "uuid": "d4ff2368-766a-42ce-9a82-570d2d9691e5",
+              "parentUUID": "87c674dc-a735-423a-9276-5dd0f3b92a30",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d4ff2368-766a-42ce-9a82-570d2d9691e5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 42133,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
