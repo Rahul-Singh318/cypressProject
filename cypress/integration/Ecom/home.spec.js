@@ -15,10 +15,8 @@ describe('Ecom',()=>{
            this.data = data
            
            cy.visit(this.data.ecomUrl)
-           ecomLogin.ecomUsername(this.data.ecomUN)
-           ecomLogin.ecomPassword(this.data.ecomPW)
-           ecomLogin.ecomSignIn()
-           cy.title().should('eq','My account - My Store')
+           
+           cy.ecomLogin(this.data.ecomUN,this.data.ecomPW)
     
         })
 
@@ -27,12 +25,76 @@ describe('Ecom',()=>{
     it('Verify Tests',function(){
 
         home.logo().click()
-        // home.womenCategory().click()         
 
-        // cy.compareSnapshot('home', 0.0);
-        // cy.compareSnapshot('home', 0.1);
+        // Search Products
+        home.search('Printed Summer Dress')
+        home.searchButton()   
+        
+        // Sort Products    
+        home.sort().select('Price: Lowest first').should('have.value','price:asc')
+        home.sort().select('Product Name: Z to A').should('have.value','name:desc')
 
+        var allproducts=[];
+        var sortedProducts= this.data.ecomProductsZA
+        home.itemNames().each(($e1, index, $list)=>{
 
+        for(let i=index;i<=index;i++)
+        {
+            allproducts[i]=$e1.text().trim()
+        }
+      
+    }).then(()=>{
+        allproducts.sort()
+        allproducts.reverse()
+        expect(sortedProducts).to.deep.equal(allproducts)   
     })
+
+    home.itemNames().each(($el,index,$list)=>{
+        const names = $el.text()
+        cy.log(names)
+
+        this.data.ecomProducts.forEach(function(el)
+            { 
+            if(names.includes(el))
+            {
+                home.addToCart().eq(index).click()
+                home.continue()
+            }
+    })
+    })
+
+       // Verify added products into the cart
+       home.addedItems().then(($num)=>{
+
+        const addedProduct = $num.text()
+
+        var i;
+        for(i=0; i<=6; i++)
+        {
+            if(i==addedProduct)
+            {
+                expect(parseInt(addedProduct)).to.be.equal(i) 
+            }
+        }
+    })
+
+    // Click on cart button
+    home.cart().click()
+
+    // Add and remove quantity
+    home.lessQty().click()
+    home.addQty().click()
+
+    // Remove item
+    home.removeItem().click()
+
+    // Click on checkout button
+    home.checkoutButton().click()
+
+
+    // cy.compareSnapshot('home', 0.0);
+    // cy.compareSnapshot('home', 0.1);
+
+})
 
 })

@@ -9,5 +9,11 @@
   "priceLH":["$7.99","$9.99","$15.99","$15.99","$29.99","$49.99"],
   "ecomUrl":"http://automationpractice.com/index.php?controller=authentication&back=my-account",
   "ecomUN":"bbiop9090@gmail.com",
-  "ecomPW":"qwerty123"
+  "wrongEcomUN":"bbiop123@gmail.com",
+  "ecomPW":"qwerty123",
+  "wrongEcomPW":"121qaz",
+  "ecomProducts":["Printed Summer Dress","Printed Chiffon Dress"],
+  "ecomProductsZA":["Printed Summer Dress","Printed Summer Dress","Printed Chiffon Dress"]
+
+
 }

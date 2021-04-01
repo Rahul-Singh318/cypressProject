@@ -55,6 +55,23 @@ Cypress.Commands.add("checkout",(firstname,lastname,zip)=>{
     cp.zipCode(zip)
 })
 
+Cypress.Commands.add("ecomLogin", (ecomEmail, ecomPassword) => {
+
+    const ecomLogin = new LoginEcom
+    cy.fixture('example').then(function(data)
+    {
+       this.data = data
+
+    ecomLogin.visit(this.data.ecomUrl)
+    ecomLogin.ecomUsername(ecomEmail)
+    ecomLogin.ecomPassword(ecomPassword)
+    ecomLogin.ecomSignIn()
+    cy.title().should('eq','My account - My Store')
+
+    })
+    
+})
+
 const compareSnapshotCommand = require('cypress-visual-regression/dist/command');
 
 compareSnapshotCommand({
